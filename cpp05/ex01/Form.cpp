@@ -52,7 +52,7 @@ const char*	Form::FormAlreadySigned::what() const throw() {
 }
 
 // Getters
-std::string	Form::getName( void ) const {
+const std::string	&Form::getName( void ) const {
 	return name;
 }
 

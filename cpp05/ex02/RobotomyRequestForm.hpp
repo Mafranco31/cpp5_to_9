@@ -16,12 +16,12 @@ class RobotomyRequestForm: public AForm {
 	public:
 	//	Canonical form
 		RobotomyRequestForm( const std::string target );
-		virtual ~RobotomyRequestForm();
+		~RobotomyRequestForm();
 		RobotomyRequestForm( const RobotomyRequestForm& copy);
 		RobotomyRequestForm	&operator= ( RobotomyRequestForm& other );
 
 		void	execute(Bureaucrat const & executor) const;
-		std::string getTarget( void ) const;
+		const std::string &getTarget( void ) const;
 };
 
 #endif

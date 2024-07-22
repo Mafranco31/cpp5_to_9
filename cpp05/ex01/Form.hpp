@@ -20,7 +20,7 @@ class	Form {
 	public:
 	//	Canonical form
 		Form( std::string name, int sign_grade, int exec_grade );
-		virtual ~Form();
+		~Form();
 		Form( const Form& copy);
 		Form	&operator= ( Form& other );
 
@@ -28,7 +28,7 @@ class	Form {
 		void		beSigned(const Bureaucrat& bu);
 
 	//	Getters
-		std::string	getName( void ) const ;
+		const std::string	&getName( void ) const ;
 		bool		getStatus( void ) const ;
 		int			getSignGrade( void ) const ;
 		int			getExecGrade( void ) const ;

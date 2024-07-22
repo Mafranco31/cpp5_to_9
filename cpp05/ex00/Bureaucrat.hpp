@@ -16,12 +16,12 @@ class	Bureaucrat {
 	public:
 	//	Canonical form
 		Bureaucrat( std::string name, int grade );
-		virtual ~Bureaucrat();
+		~Bureaucrat();
 		Bureaucrat( const Bureaucrat& copy);
 		Bureaucrat	&operator= ( Bureaucrat& other );
 
 	//	Function to get variables
-		std::string getName( void ) const;
+		const std::string &getName( void ) const;
 		int getGrade( void ) const;
 
 	//	Increment and Decrement the grade

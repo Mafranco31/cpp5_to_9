@@ -36,4 +36,4 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 		std::cout << this->getTarget() << " has been robotomized." << std::endl;
 }
 
-std::string RobotomyRequestForm::getTarget( void ) const { return target; }
+const std::string	&RobotomyRequestForm::getTarget( void ) const { return this->target; }

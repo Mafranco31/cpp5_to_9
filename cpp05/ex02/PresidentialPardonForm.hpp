@@ -15,13 +15,13 @@ class PresidentialPardonForm: public AForm {
 	public:
 	//	Canonical form
 		PresidentialPardonForm( const std::string target );
-		virtual ~PresidentialPardonForm();
+		~PresidentialPardonForm();
 		PresidentialPardonForm( const PresidentialPardonForm& copy);
 		PresidentialPardonForm	&operator= ( PresidentialPardonForm& other );
 
 		void	execute(Bureaucrat const & executor) const;
 
-		std::string	getTarget ( void ) const;
+		const std::string	&getTarget ( void ) const;
 };
 
 #endif

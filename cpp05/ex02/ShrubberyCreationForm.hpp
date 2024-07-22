@@ -14,13 +14,13 @@ class ShrubberyCreationForm: public AForm {
 	public:
 	//	Canonical form
 		ShrubberyCreationForm( const std::string target );
-		virtual ~ShrubberyCreationForm();
+		~ShrubberyCreationForm();
 		ShrubberyCreationForm( const ShrubberyCreationForm& copy);
 		ShrubberyCreationForm	&operator= ( ShrubberyCreationForm& other );
 
 		void	execute(Bureaucrat const & executor) const;
 
-		std::string	getTarget ( void ) const;
+		const std::string	&getTarget ( void ) const;
 };
 
 #endif

@@ -65,8 +65,8 @@ const char*	AForm::FormNotSigned::what() const throw() {
 }
 
 // Getters
-std::string	AForm::getName( void ) const {
-	return name;
+std::string	const &AForm::getName( void ) const {
+	return this->name;
 }
 bool	AForm::getStatus( void ) const {
 	return is_signed;
@@ -77,10 +77,12 @@ int	AForm::getSignGrade( void ) const {
 int	AForm::getExecGrade( void ) const {
 	return exec_grade;
 }
+//std::string	AForm::getTarget( void ) const { return ; }
 
 // Overload of operator <<
 std::ostream& operator<<( std::ostream& out, AForm const& form) {
 	out << form.getName() << " : status : " << form.getStatus()
+	<< ", target : " << form.getTarget()
 	<< ", grade required to sign : " << form.getSignGrade()
 	<< ", grade required to execute : " << form.getExecGrade() << ".";
 	return out;

@@ -29,10 +29,11 @@ class	AForm {
 		virtual void	execute(Bureaucrat const & executor) const = 0;
 
 	//	Getters
-		std::string	getName( void ) const ;
-		bool		getStatus( void ) const ;
-		int			getSignGrade( void ) const ;
-		int			getExecGrade( void ) const ;
+		std::string const			&getName( void ) const ;
+		bool						getStatus( void ) const ;
+		int							getSignGrade( void ) const ;
+		int							getExecGrade( void ) const ;
+		virtual const std::string	&getTarget( void ) const = 0;
 
 	//	Exceptions
 		class GradeTooLowException: public std::exception {
