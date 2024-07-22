@@ -37,6 +37,8 @@ void	AForm::beSigned( const Bureaucrat& bu) {
 	is_signed = true;
 }
 
+void	AForm::excecute(Bureaucrat const & executor) const { return ; }
+
 // Exceptions
 
 const char*	AForm::GradeTooHighException::what() const throw() {
