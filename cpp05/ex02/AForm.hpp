@@ -22,10 +22,11 @@ class	AForm {
 		AForm( std::string name, int sign_grade, int exec_grade );
 		virtual ~AForm();
 		AForm( const AForm& copy);
-		AForm	&operator= ( AForm other );
+		AForm	&operator= ( AForm& other );
 
 	//	Member funcion
 		void		beSigned(const Bureaucrat& bu);
+		virtual void	excecute(Bureaucrat const & executor) const = 0;
 
 	//	Getters
 		std::string	getName( void ) const ;

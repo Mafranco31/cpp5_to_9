@@ -18,7 +18,7 @@ Bureaucrat::~Bureaucrat ( void ) {
 	std::cout << "Destructor Bureaucrat called" << std::endl;
 }
 
-Bureaucrat	&Bureaucrat::operator=( Bureaucrat other ) {
+Bureaucrat	&Bureaucrat::operator=( Bureaucrat& other ) {
 	std::cout << "Copy assignment operator Bureaucrat called" << std::endl;
 	if (this != &other) {
         this->grade = other.grade;

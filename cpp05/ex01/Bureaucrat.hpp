@@ -21,7 +21,7 @@ class	Bureaucrat {
 		Bureaucrat( std::string name, int grade );
 		virtual ~Bureaucrat();
 		Bureaucrat( const Bureaucrat& copy);
-		Bureaucrat	&operator= ( Bureaucrat other );
+		Bureaucrat	&operator= ( Bureaucrat& other );
 
 	//	Member funcions
 		void signForm ( Form& f) const ;

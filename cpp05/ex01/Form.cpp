@@ -19,7 +19,7 @@ Form::~Form ( void ) {
 	std::cout << "Destructor Form called" << std::endl;
 }
 
-Form	&Form::operator=( Form other ) {
+Form	&Form::operator=( Form& other ) {
 	std::cout << "Copy assignment operator Form called" << std::endl;
 	if (this != &other) {
         this->is_signed = other.is_signed;

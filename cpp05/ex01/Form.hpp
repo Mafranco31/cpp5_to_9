@@ -22,7 +22,7 @@ class	Form {
 		Form( std::string name, int sign_grade, int exec_grade );
 		virtual ~Form();
 		Form( const Form& copy);
-		Form	&operator= ( Form other );
+		Form	&operator= ( Form& other );
 
 	//	Member funcion
 		void		beSigned(const Bureaucrat& bu);
