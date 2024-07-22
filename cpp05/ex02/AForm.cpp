@@ -2,7 +2,12 @@
 
 AForm::AForm(): sign_grade(0), exec_grade(0) {}
 
-AForm::AForm ( std::string name, int sign_grade, int exec_grade ) : name(name), sign_grade(sign_grade), exec_grade(exec_grade) {
+AForm::AForm ( const std::string name, const int sign_grade, const int exec_grade )
+	:
+		name(name),
+		sign_grade(sign_grade),
+		exec_grade(exec_grade) {
+
 	std::cout << "Default Form constructor called" << std::endl;
 	if (sign_grade > 150 || exec_grade > 150)
 		throw GradeTooLowException();
@@ -11,7 +16,12 @@ AForm::AForm ( std::string name, int sign_grade, int exec_grade ) : name(name), 
 	is_signed = false;
 }
 
-AForm::AForm ( const AForm &copy ) : name(copy.name),  is_signed(copy.is_signed), sign_grade(copy.sign_grade), exec_grade(copy.exec_grade) {
+AForm::AForm ( const AForm &copy )
+	:	name(copy.name),
+		is_signed(copy.is_signed),
+		sign_grade(copy.sign_grade),
+		exec_grade(copy.exec_grade) {
+
 	std::cout << "Copy Form constructor called" << std::endl;
 }
 
@@ -33,45 +43,45 @@ void	AForm::beSigned( const Bureaucrat& bu) {
 	if (is_signed)
 		throw FormAlreadySigned();
 	if (bu.getGrade() > sign_grade)
-		throw GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 	is_signed = true;
 }
 
-void	AForm::excecute(Bureaucrat const & executor) const { return ; }
+void	AForm::execute(Bureaucrat const & executor) const { (void)executor; }
 
 // Exceptions
 
 const char*	AForm::GradeTooHighException::what() const throw() {
 	return "Form grade is too high !";
 }
-
 const char*	AForm::GradeTooLowException::what() const throw() {
 	return "Form grade is too low !";
 }
-
 const char*	AForm::FormAlreadySigned::what() const throw() {
 	return "Form is already signed !";
+}
+const char*	AForm::FormNotSigned::what() const throw() {
+	return "Form is not signed !";
 }
 
 // Getters
 std::string	AForm::getName( void ) const {
 	return name;
 }
-
 bool	AForm::getStatus( void ) const {
 	return is_signed;
 }
-
 int	AForm::getSignGrade( void ) const {
 	return sign_grade;
 }
-
 int	AForm::getExecGrade( void ) const {
 	return exec_grade;
 }
 
 // Overload of operator <<
 std::ostream& operator<<( std::ostream& out, AForm const& form) {
-	out << form.getName() << " : status : " << form.getStatus() << ", grade required to sign : " << form.getSignGrade() << ", grade required to execute : " << form.getExecGrade() << ".";
+	out << form.getName() << " : status : " << form.getStatus()
+	<< ", grade required to sign : " << form.getSignGrade()
+	<< ", grade required to execute : " << form.getExecGrade() << ".";
 	return out;
 }

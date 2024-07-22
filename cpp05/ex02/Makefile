@@ -1,7 +1,7 @@
 
 NAME = game
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 CC = c++
 RM = rm -f
@@ -22,6 +22,7 @@ $(NAME): $(OBJ)
 
 clean:
 	$(RM) *.o *.d
+	$(RM) *shrubbery
 
 fclean: clean
 	$(RM) $(NAME)

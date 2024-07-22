@@ -24,15 +24,16 @@ class	Bureaucrat {
 		Bureaucrat	&operator= ( Bureaucrat& other );
 
 	//	Member funcions
-		void signForm ( AForm& f) const ;
+		void	signForm ( AForm& f) const ;
+		void	executeForm(AForm const & form) const ;
 
 	//	Getters
 		std::string getName( void ) const;
-		int getGrade( void ) const;
+		int	getGrade( void ) const;
 
 	//	Increment and Decrement the grade
-		void incrementGrade( int num );
-		void decrementGrade( int num );
+		void	incrementGrade( int num );
+		void	decrementGrade( int num );
 
 	//	Exception classes
 		class GradeTooLowException: public std::exception {

@@ -10,23 +10,23 @@ class Bureaucrat;
 
 class	AForm {
 
-	private:
+	protected:
 		const std::string	name;
-		bool	is_signed;
-		const int	sign_grade;
-		const int	exec_grade;
+		bool				is_signed;
+		const int			sign_grade;
+		const int			exec_grade;
 
 		AForm();
 	public:
 	//	Canonical form
-		AForm( std::string name, int sign_grade, int exec_grade );
+		AForm( const std::string name, const int sign_grade, const int exec_grade );
 		virtual ~AForm();
 		AForm( const AForm& copy);
 		AForm	&operator= ( AForm& other );
 
 	//	Member funcion
 		void		beSigned(const Bureaucrat& bu);
-		virtual void	excecute(Bureaucrat const & executor) const = 0;
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 
 	//	Getters
 		std::string	getName( void ) const ;
@@ -42,6 +42,9 @@ class	AForm {
 				virtual const char*	what() const throw();
 		};
 		class FormAlreadySigned: public std::exception {
+				virtual const char*	what() const throw();
+		};
+		class FormNotSigned: public std::exception {
 				virtual const char*	what() const throw();
 		};
 };
