@@ -15,4 +15,4 @@ with open(name + '.cpp', 'w') as file:
     file.write(f"{name}\t&{name}::operator=( {name}& other ) {{\n\tstd::cout << \"Copy assignment operator {name} called\" << std::endl;\n\treturn *this;\n}}\n")
 
 with open(name + '.hpp', 'w') as file:
-    file.write(f"#ifndef {name_cap}_HPP\n# define {name_cap}_HPP\n\n# include <iostream>\n# include <string>\n\nclass {name}{{\n\nprivate:\n\npublic:\n//	Canonical form\n\t{name}( void );\n\tvirtual ~{name}();\n\t{name}( const {name}& copy);\n\t{name}\t&operator= ( {name}& other );\n}};\n\n#endif")
+    file.write(f"#ifndef {name_cap}_HPP\n# define {name_cap}_HPP\n\n# include <iostream>\n# include <string>\n\nclass {name}{{\n\n\tprivate:\n\n\tpublic:\n\t//	Canonical form\n\t\t{name}( void );\n\t\t~{name}();\n\t\t{name}( const {name}& copy);\n\t\t{name}\t&operator= ( {name}& other );\n}};\n\n#endif")

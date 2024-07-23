@@ -69,15 +69,14 @@ std::string	const &AForm::getName( void ) const {
 	return this->name;
 }
 bool	AForm::getStatus( void ) const {
-	return is_signed;
+	return this->is_signed;
 }
 int	AForm::getSignGrade( void ) const {
-	return sign_grade;
+	return this->sign_grade;
 }
 int	AForm::getExecGrade( void ) const {
-	return exec_grade;
+	return this->exec_grade;
 }
-//std::string	AForm::getTarget( void ) const { return ; }
 
 // Overload of operator <<
 std::ostream& operator<<( std::ostream& out, AForm const& form) {
