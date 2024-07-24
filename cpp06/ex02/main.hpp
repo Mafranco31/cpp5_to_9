@@ -22,7 +22,6 @@ void identify(Base* p) {
 }
 
 void identify(Base& p) {
-
     try {
         A &a = dynamic_cast<A&>(p);
         std::cout << "Object is of type A."<< std::endl;

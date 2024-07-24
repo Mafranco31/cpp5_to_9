@@ -1,4 +1,3 @@
-
 NAME = ex01
 
 SRC = main.cpp Serializer.cpp
@@ -7,12 +6,13 @@ CC = c++
 RM = rm -f
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
+DEPFLAGS = -MMD -MP
 
 OBJ = $(SRC:.cpp=.o)
 DEPS = $(SRC:.cpp=.d)
 
-%.o: %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+%.o: %.cpp Makefile
+	$(CC) $(FLAGS) $(DEPFLAGS) -c $< -o $@
 
 all: $(NAME)
 
@@ -22,7 +22,6 @@ $(NAME): $(OBJ)
 
 clean:
 	$(RM) *.o *.d
-	$(RM) *shrubbery
 
 fclean: clean
 	$(RM) $(NAME)
