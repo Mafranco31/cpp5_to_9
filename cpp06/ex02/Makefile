@@ -1,6 +1,6 @@
 NAME = ex02
 
-SRC = main.cpp A.cpp B.cpp C.cpp Base.cpp
+SRC = main.cpp A.cpp B.cpp C.cpp Base.cpp generate.cpp identify.cpp
 
 CC = c++
 RM = rm -f
