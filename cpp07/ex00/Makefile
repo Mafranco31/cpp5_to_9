@@ -1,7 +1,7 @@
 
 NAME = ex00
 
-SRC = main.cpp utils.cpp
+SRC = main.cpp 
 
 CC = c++
 RM = rm -f
