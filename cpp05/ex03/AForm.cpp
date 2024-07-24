@@ -31,9 +31,6 @@ AForm::~AForm ( void ) {
 
 AForm	&AForm::operator=( AForm& other ) {
 	std::cout << "Copy assignment operator Form called" << std::endl;
-	if (this != &other) {
-        this->is_signed = other.is_signed;
-    }
 	return *this;
 }
 
