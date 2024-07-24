@@ -1,7 +1,7 @@
 
-NAME = ex01
+NAME = ex02
 
-SRC = main.cpp Serializer.cpp
+SRC = main.cpp A.cpp B.cpp C.cpp Base.cpp
 
 CC = c++
 RM = rm -f
@@ -22,7 +22,6 @@ $(NAME): $(OBJ)
 
 clean:
 	$(RM) *.o *.d
-	$(RM) *shrubbery
 
 fclean: clean
 	$(RM) $(NAME)
