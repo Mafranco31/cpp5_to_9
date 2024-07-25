@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Span.hpp"
 #include <unistd.h>
+#include <vector>
 
 int main()
 {
