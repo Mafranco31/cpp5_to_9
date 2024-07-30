@@ -150,14 +150,10 @@ void	specialD( std::string str ) {
 	std::cout << "double: " << std::fixed << std::setprecision(1) <<  num << std::endl;
 }
 
-int	ft_isnum( int c ) {
-	return (c > 47 && c < 58);
-}
-
 /*	*********************** Parsing **************************	*/
 void		getType( std::string str ) {
-	if ((str.length() == 1 && std::isprint(str[0]) && !ft_isnum(str[0]))
-		|| (str[0] == str[2] && (str[0] == '\'' || str[0] == '"') && ft_isnum(str[1]) && str.length() == 3))
+	if ((str.length() == 1 && std::isprint(str[0]) && !std::isdigit(str[0]))
+		|| (str[0] == str[2] && (str[0] == '\'' || str[0] == '"') && std::isdigit(str[1]) && str.length() == 3))
 		return fromChar(str);
 	else if (isInteger(str))
 		return fromInt(str);

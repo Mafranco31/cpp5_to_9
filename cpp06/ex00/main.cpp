@@ -1,4 +1,6 @@
 #include "ScalarConverter.hpp"
+#include <string>
+#include <iostream>
 
 void    convert( std::string argv)
 {
