@@ -1,5 +1,8 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include <iostream>
+#include <string>
+#include <stdexcept>
 
 int main( void ) {
     Form    f1("Rule 1", 30, 10);

@@ -39,9 +39,8 @@ AForm *Intern::makeFormSC( std::string form, std::string target, AForm *rrf) {
 
 AForm *Intern::makeForm(std::string form, std::string target)
 {
-    AForm	*rrf;
+    AForm	*rrf = NULL;
 	
-	rrf = nullptr;
 	rrf = makeFormPP( form, target, rrf );
 	rrf = makeFormRR( form, target, rrf );
 	rrf = makeFormSC( form, target, rrf );

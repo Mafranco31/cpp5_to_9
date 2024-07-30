@@ -31,6 +31,7 @@ AForm::~AForm ( void ) {
 
 AForm	&AForm::operator=( AForm& other ) {
 	std::cout << "Copy assignment operator Form called" << std::endl;
+	(void)other;
 	return *this;
 }
 

@@ -6,6 +6,7 @@
 # include "AForm.hpp"
 # include <fstream>
 # include <ctime>
+# include <stdexcept>
 
 class PresidentialPardonForm: public AForm {
 

@@ -4,6 +4,9 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
+#include <iostream>
+#include <string>
+#include <stdexcept>
 
 
 int main( void ) {
@@ -32,7 +35,7 @@ int main( void ) {
         std::cout << "Intern failed to create form because " << e.what() << "." << std::endl;
     }
 
-        std::cout << std::endl;
+    std::cout << std::endl;
     try {
         rrf = i1.makeForm("Presidential Pardon", "Chair");
         std::cout << *rrf << std::endl;

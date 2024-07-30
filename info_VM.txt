@@ -1,0 +1,7 @@
+Hostname: mafranco42
+password: Hola42bcn
+
+user: mafranco
+password: Hola42es
+
+Encryption passphrase: Hello42bcn

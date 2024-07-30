@@ -1,4 +1,7 @@
 #include "Bureaucrat.hpp"
+#include <iostream>
+#include <string>
+#include <stdexcept>
 
 int main( void ) {
     try {

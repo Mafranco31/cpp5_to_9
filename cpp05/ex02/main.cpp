@@ -3,6 +3,9 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <iostream>
+#include <string>
+#include <stdexcept>
 
 int main( void ) {
     ShrubberyCreationForm    f1("Park");

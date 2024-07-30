@@ -6,6 +6,8 @@
 # include "AForm.hpp"
 # include <fstream>
 # include <iomanip>
+# include <stdexcept>
+# include <cstdlib>
 
 class RobotomyRequestForm: public AForm {
 

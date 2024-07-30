@@ -28,7 +28,8 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (executor.getGrade() > this->getExecGrade())
 		throw Bureaucrat::GradeTooLowException();
 
-	std::ofstream outFile(target + "_shrubbery");
+	
+	std::ofstream outFile((this->getTarget() + "_shrubbery").c_str());
 	if (outFile.is_open()) {
 		outFile << "    *       *       *    " << std::endl
 				<< "   ***     ***     ***   " << std::endl

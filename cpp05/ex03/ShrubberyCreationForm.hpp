@@ -5,6 +5,7 @@
 # include <string>
 # include "AForm.hpp"
 # include <fstream>
+# include <stdexcept>
 
 class ShrubberyCreationForm: public AForm {
 
