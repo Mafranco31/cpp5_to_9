@@ -17,17 +17,17 @@ template <typename T> class Array {
 
 		Array( const Array &copy ) : s(copy.s) {
 			data = new T[s];
-			for (int i = 0; i < static_cast<int>(s); i++) {
+			for (size_t i = 0; i < s; i++) {
 				data[i] = copy.data[i];
 			}
 		}
 
-		Array<T>& operator=( Array &other) {
+		Array<T>& operator=( const Array &other) {
 			if (this == &other) { return *this; }
 			delete[] data;
 			s = other.s;
 			data = new T[s];
-			for (int i = 0; i < static_cast<int>(s); i++) {
+			for (size_t i = 0; i < s; i++) {
 				data[i] = other.data[i];
 			}
 			return *this;

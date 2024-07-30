@@ -1,9 +1,12 @@
 #include "iter.hpp"
+#include <iostream>
+#include <string>
 
 void    ft_capitalize(char &c) {
     if (c > 96 && c < 123)
         c -= 32;
 }
+
 
 template <typename T>
 void    ft_increment(T &n) {

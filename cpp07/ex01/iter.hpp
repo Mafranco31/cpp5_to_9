@@ -4,9 +4,9 @@
 # include <iostream>
 # include <string>
 
-template <typename T, typename L, typename F >
-void    iter(T *addr, L len, F function) {
-    for (L i = 0; i < len; i++) {
+template <typename T, typename F >
+void    iter(T *addr, size_t len, F function) {
+    for (size_t i = 0; i < len; i++) {
         function(addr[i]);
     }
 }
