@@ -11,6 +11,7 @@ int main( void ) {
     ShrubberyCreationForm    f1("Park");
     Bureaucrat  b1("Carl", 150);
     Bureaucrat  b2("Jose", 5);
+    std::cout << std::endl;
     std::cout << "** Shrubbery Creation Form **" << std::endl;
 
     b2.signForm(f1);

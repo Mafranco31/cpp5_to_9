@@ -33,7 +33,7 @@ void	Form::beSigned( const Bureaucrat& bu) {
 	if (is_signed)
 		throw FormAlreadySigned();
 	if (bu.getGrade() > sign_grade)
-		throw GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 	is_signed = true;
 }
 

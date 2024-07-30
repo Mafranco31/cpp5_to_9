@@ -5,9 +5,9 @@ Bureaucrat::Bureaucrat() {}
 Bureaucrat::Bureaucrat ( std::string name, int grade ) : name(name), grade(grade) {
 	std::cout << "Default Bureaucrat constructor called" << std::endl;
 	if (grade < 1)
-		throw GradeTooLowException();
-	if (grade > 150)
 		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat ( const Bureaucrat &copy ) : name(copy.name), grade(copy.grade){
@@ -80,6 +80,6 @@ const char*	Bureaucrat::GradeTooLowException::what() const throw() {
 }
 
 std::ostream& operator<<( std::ostream& out, Bureaucrat const& bureaucrat) {
-	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
+	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << "." << std::endl;
 	return out;
 }
