@@ -81,7 +81,7 @@ void	fromFloat( std::string str) {
 		std::cout << "char: " << static_cast<unsigned char>(num) << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
-	if (num > 2147483647 || num < -2147483648)
+	if (num > 2147483647. || num < -2147483648.)
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(num) << std::endl;

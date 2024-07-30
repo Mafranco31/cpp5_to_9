@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include <stdexcept>
+# include <algorithm>
 
 class NumNotFoundException: public std::exception {
     const char * what() const throw () {

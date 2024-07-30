@@ -1,4 +1,5 @@
 #include "main.hpp"
+#include "cstdlib"
 
 Base * generate(void) {
 	srand(time(NULL));
@@ -12,6 +13,6 @@ Base * generate(void) {
 		case 2:
 			return new C;
         default:
-            return nullptr;
+            return NULL;
 	}
 }
