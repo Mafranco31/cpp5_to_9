@@ -23,34 +23,45 @@ Span	&Span::operator=( const Span& other ) {
 	return *this;
 }
 
-void Span::addNumber( const int number) {
-	if (static_cast<unsigned int>(v.size()) >= n)
-		throw TooMuchElementsException();
-	
-	std::vector<int>::iterator	it = v.begin();
-	while (it < v.end() && *it < number) {
-		it++;
-	}
-	v.insert(it, number);
-	std::cout << "Number: " << number << " added !" << std::endl;
+void	Span::addNumber(int num) {
+	if (this->v.size() >= this->n)
+		throw Span::TooMuchElementsException();
+	this->v.push_back(num);
 }
 
-int Span::shortestSpan(void) const {
-	if (v.size() < 2)
-		throw NotEnoughNumbersException();
-	int	shortest = v[1] - v[0];
-	for (size_t i = 2; i < v.size(); i++ ) {
-		if (v[i] - v[i - 1] < shortest) {
-			shortest = v[i] - v[i - 1];
-		}
+
+int		Span::shortestSpan(void) {
+	if (this->v.size() <= 1)
+		throw Span::NotEnoughNumbersException();
+
+	std::vector<int> tmp = this->v;
+	std::sort(tmp.begin(), tmp.end());
+
+	int shortest = tmp[1] - tmp[0];
+	for (unsigned int i = 1; i < tmp.size(); i++) {
+		if (tmp[i] - tmp[i - 1] < shortest)
+			shortest = tmp[i] - tmp[i - 1];
 	}
-    return shortest;
+	return (shortest);
 }
 
 int Span::longestSpan(void) const {
 	if (v.size() < 2)
 		throw NotEnoughNumbersException();
     return *std::max_element(v.begin(), v.end()) - *std::min_element(v.begin(), v.end());
+}
+
+void	Span::addRandom( unsigned int num, int max) {
+	if (num > getSpace())
+		throw TooMuchElementsAddRandomException();
+	
+	int	number;
+	std::vector<int>::iterator	it;
+	for (unsigned int i = 0; i < num; i++) {
+		it = v.begin();
+		number = rand() % max;
+		v.insert(it, number);
+	}
 }
 
 void Span::addVector(std::vector<int> vec) {
@@ -64,6 +75,14 @@ void Span::addVector(std::vector<int> vec) {
 		throw TooMuchElementsException();
 }
 
+unsigned int	Span::getNmax( void ) const { return n; }
+
+unsigned int	Span::getSpace( void ) const {
+	return (this->n - static_cast<unsigned int>(v.size()));
+}
+
+std::vector<int>	Span::getVector( void ) const { return v;}
+
 int &Span::operator[](size_t index) {
     if (index >= v.size())
 		throw IndexOutOfBoundsException();
@@ -72,6 +91,10 @@ int &Span::operator[](size_t index) {
 
 const char *Span::TooMuchElementsException::what() const throw() {
     return "There is not enough space for more numbers !";
+}
+
+const char *Span::TooMuchElementsAddRandomException::what() const throw() {
+    return "There is not enough space for all those numbers !";
 }
 
 const char *Span::NotEnoughNumbersException::what() const throw() {

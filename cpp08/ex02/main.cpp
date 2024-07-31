@@ -1,7 +1,6 @@
 #include "MutantStack.hpp"
 #include <stack>
 #include <iostream>
-#include <list>
 
 int main()
 {
@@ -14,7 +13,7 @@ int main()
     mstack.push(3);
     mstack.push(5);
     mstack.push(737);
-    //[...]
+
     mstack.push(0);
     MutantStack<int>::iterator it = mstack.begin();
     MutantStack<int>::iterator ite = mstack.end();
@@ -23,8 +22,8 @@ int main()
     std::cout << "Full Mutant Stack: "<< std::endl;
     while (it != ite)
     {
-    std::cout << *it << ", ";
-    ++it;
+        std::cout << *it << ", ";
+        ++it;
     }
     std::cout << std::endl;
     std::stack<int> s(mstack);

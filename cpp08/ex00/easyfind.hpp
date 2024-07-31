@@ -13,12 +13,25 @@ class NumNotFoundException: public std::exception {
 };
 
 template <typename T>
-int easyfind( T cont, int ent) {
+typename T::iterator easyfind( T &cont, int ent) {
     typename T::iterator it;
     it = std::find(cont.begin(), cont.end(), ent);
     if (it == cont.end())
         throw NumNotFoundException();
-    return *it;
+    return it;
 }
+
+/*template <typename T>
+void easyfind( T &cont, int ent) {
+    typename T::iterator it;
+
+    it = std::find(cont.begin(), cont.end(), ent);
+
+    if (it == cont.end())
+        throw NumNotFoundException();
+
+    std::cout << "Number found at position: "
+        << std::distance(cont.begin(), it) << std::endl;
+}*/
 
 #endif

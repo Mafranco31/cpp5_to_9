@@ -6,7 +6,7 @@ SRC = main.cpp BitcoinExchange.cpp
 CC = c++
 RM = rm -f
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 DEPFLAGS = -MMD -MP
 
 OBJ = $(SRC:.cpp=.o)
