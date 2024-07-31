@@ -40,7 +40,7 @@ BitcoinExchange::BitcoinExchange( void )
 	try {
     	data = getMap();
 	} catch (std::exception & e) {
-		throw e;
+		throw;
 	}
 	std::cout << "Default BitcoinExchange constructor called" << std::endl;
 }
