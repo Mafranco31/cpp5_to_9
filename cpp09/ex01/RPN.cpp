@@ -66,6 +66,8 @@ void	RPN::createList( std::string str ) {
 				
 		}
 	}
+	if (st.size() != 1)
+		throw BadRPNForm();
 	result = st.top();
 }
 

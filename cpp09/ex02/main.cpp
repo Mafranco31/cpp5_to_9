@@ -35,8 +35,6 @@ int main( int argc, char **argv) {
     fordJohnsonAlgorithm(dqe);
     std::clock_t  deque_end_time = std::clock();
 
-    std::cout << list_start_time << " " << list_end_time << std::endl;
-
     std::cout << "After:\t";
     for (std::list<int>::iterator it = lst.begin(); it != lst.end(); it++)
         std::cout << " " << *it;
