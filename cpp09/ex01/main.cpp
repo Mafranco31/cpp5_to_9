@@ -8,7 +8,7 @@ int main( int argc, char **argv ) {
         return (0);
     }
     try {
-        RPN rpn(argv[1], 1);
+        RPN rpn(argv[1]);
         std::cout << rpn.getResult() << std::endl;
     } catch (std::exception &e) {
         std::cout << "Error: " << e.what() << std::endl;

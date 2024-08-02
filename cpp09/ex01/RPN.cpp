@@ -73,7 +73,6 @@ void	RPN::createList( std::string str ) {
 //	Canonical form
 
 RPN::RPN ( const std::string &str ) {
-	std::cout << "Default RPN constructor called" << std::endl;
 	f_show = 0;
 	try {
 		createList(str);
@@ -83,7 +82,6 @@ RPN::RPN ( const std::string &str ) {
 }
 
 RPN::RPN ( const std::string &str, int f_show ) : f_show(f_show){
-	std::cout << "Default RPN constructor called" << std::endl;
 	try {
 		createList(str);
 	} catch (std::exception & e) {
@@ -92,17 +90,14 @@ RPN::RPN ( const std::string &str, int f_show ) : f_show(f_show){
 }
 
 RPN::RPN ( const RPN &copy ) {
-	std::cout << "Copy RPN constructor called" << std::endl;
 	*this = copy;
 }
 
 RPN::~RPN ( void ) {
-	std::cout << "Destructor RPN called" << std::endl;
 }
 
 RPN	&RPN::operator=( const RPN& other ) {
-	std::cout << "Copy assignment operator RPN called" << std::endl;
-	lst = other.lst;
+	st = other.st;
 	result = other.result;
 	return *this;
 }

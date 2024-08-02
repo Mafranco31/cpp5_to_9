@@ -17,7 +17,6 @@ class RPN {
 		void	performCalcul(char c );
 		void	createList( std::string str );
 
-		std::list<char>	lst;
 		std::stack<double>	st;
 		double	result;
 		int		f_show;
